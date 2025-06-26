@@ -9,22 +9,18 @@ from mysql.connector import Error
 
 class Conexion:
     def __init__(self):
-        strBase = DB_CONFIG['database']
-        strUserName = DB_CONFIG['user']
-        strHostName = DB_CONFIG['host']
-        strPassword = DB_CONFIG['password']
-        intPort =DB_CONFIG['port']
         try:
-            __connection= mysql.connector.connect(
+            self.__connection= mysql.connector.connect(
                 host = DB_CONFIG['host'],
                 database = DB_CONFIG['database'],
                 user = DB_CONFIG['user'],
                 password = DB_CONFIG['password'],
                 port =DB_CONFIG['port']
             )
-            if __connection.is_connected():
-                info = __connection.server_info
+            if self.__connection.is_connected():
+                info = self.__connection.server_info
                 print(f"Conexion succesfull {info}")
         except Error as e:
             print(f"Error while connecting to MySQL: {e}")
-Conexion()
+    def getConnection(self):
+        return self.__connection
