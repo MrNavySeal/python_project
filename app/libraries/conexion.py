@@ -1,5 +1,5 @@
 
-from config.settings import DB_CONFIG
+from app.config.settings import DB_CONFIG
 import mysql.connector
 from mysql.connector import Error
 
@@ -15,6 +15,7 @@ class Conexion:
             )
             if self.__connection.is_connected():
                 info = self.__connection.server_info
+                print(f"Conexion successfully {info}")
         except Error as e:
             print(f"Error while connecting to MySQL: {e}")
     def getConnection(self):

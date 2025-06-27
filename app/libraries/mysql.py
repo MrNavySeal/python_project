@@ -1,4 +1,4 @@
-from conexion import Conexion
+from app.libraries.conexion import Conexion
 class Mysql(Conexion):
     def __init__(self):
         self.__connection = Conexion().getConnection()
@@ -39,5 +39,4 @@ class Mysql(Conexion):
             self.__connection.commit()
             result = cursor.rowcount
         return result
-#print(Mysql().create("INSERT INTO users (name,email) values(%s,%s)",["carlos","carlos@gmail.com"]))
-print(Mysql().find("SELECT * FROM users"))
+print(Mysql().find("SELECT * FROM humnomina"))
