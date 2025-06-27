@@ -1,9 +1,5 @@
 
-import sys
-from pathlib import Path
-project_root = Path(__file__).parent.parent.parent  # Adjust based on your actual structure
-sys.path.append(str(project_root))
-from config import DB_CONFIG
+from config.settings import DB_CONFIG
 import mysql.connector
 from mysql.connector import Error
 
@@ -19,7 +15,6 @@ class Conexion:
             )
             if self.__connection.is_connected():
                 info = self.__connection.server_info
-                print(f"Conexion succesfull {info}")
         except Error as e:
             print(f"Error while connecting to MySQL: {e}")
     def getConnection(self):
