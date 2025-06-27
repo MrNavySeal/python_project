@@ -2,6 +2,6 @@ DB_CONFIG = {
     "host":"localhost",
     "user":"root",
     "password":"",
-    "database":'lleras',
+    "database":'python',
     "port":"3306"
 }

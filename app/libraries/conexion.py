@@ -1,5 +1,5 @@
 
-from app.config.settings import DB_CONFIG
+from app.Config.settings import DB_CONFIG
 import mysql.connector
 from mysql.connector import Error
 
