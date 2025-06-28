@@ -13,8 +13,8 @@ class Main():
     def __center_window(self, width=800, height=600):
         screen_width = self.__window.winfo_screenwidth()
         screen_height = self.__window.winfo_screenheight()
-        x = int((screen_width / 2) - (width / 2))
-        y = int((screen_height / 2) - (height / 2))
+        x = int((screen_width  - width )/2)
+        y = int((screen_height - height)/2)
         self.__window.geometry(f"{width}x{height}+{x}+{y}")
 
 
