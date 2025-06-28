@@ -1,7 +1,7 @@
 import os
 import importlib
-
-class View:
+import tkinter as tk
+class View():
     def __init__(self,controller):
         self.__controller = controller
     def get_view(self,view,data=""):
@@ -12,7 +12,7 @@ class View:
                 import_path = f"app.Views.{ self.__controller}.{view}"
                 module = importlib.import_module(import_path)
                 ViewClass = getattr(module,view)
-                return ViewClass(data)
+                return ViewClass(tk.Frame(tk.Tk()),data)
             else:
                 raise Exception(f"The {view} view doesn't exist")
         else:

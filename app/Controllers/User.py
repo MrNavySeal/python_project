@@ -3,6 +3,8 @@ class User(Controller):
     def __init__(self):
         super().__init__(self.__class__.__name__)
     def show(self):
-        super().view().get_view("Show",{"nombre":"david"})
+        data = {"title":"Users"}
+        view = super().view().get_view("Show",data)
+        return view.get_frame()
 
-User().show()
+#print(User().show())
