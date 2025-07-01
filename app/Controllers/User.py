@@ -13,4 +13,6 @@ class User(Controller):
             return "New user created successfully"
         else:
             return "It has ocurred an error, try again."
+    def get_users(self):
+        return self.model().all()
 
